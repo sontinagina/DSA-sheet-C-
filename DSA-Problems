@@ -1,0 +1,104 @@
+#include <iostream>
+using namespace std;
+\\ reverse an array
+int main() {
+   int a;
+   int arr[10]={4,5,6,7,9,12,55,65,7,8};
+   cout<<arr[0]<<"\n";
+   cin >>a;
+   cout<<"Hello World! Aditi this side\n "<<a;
+   cout<<"\n";
+   int size=sizeof(arr)/sizeof(int);
+   cout<<size<<"\n";
+   for(int i=size-1;i>=0;i--){
+       cout<<arr[i]<<" ";
+   }
+}
+
+
+
+
+\\ find min and max elements in an array
+
+#include <iostream>
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+   int a,b;
+   int arr[10]={4,5,6,7,9,12,55,65,7,1};
+   int min=arr[0];
+   int max=arr[0];
+   int size=sizeof(arr)/sizeof(int);
+   for(int i=size-1;i>=0;i--){
+   if(min>arr[i]){
+   min=arr[i];
+  }
+  if(max<arr[i]){
+  max=arr[i];
+}
+   }
+   cout<<min<<" "<<max<< " \n";
+   cout<<"min value = "<<*min_element(arr,arr+size)<<"\n max value ="<< *max_element(arr,arr+size);
+}
+
+
+
+
+
+
+
+\\sortr array in ascending and descending order
+
+
+#include <iostream>
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+  int k=2;
+  int array[9]={2,4,5,6,7,8,3,1,9};
+  int n=sizeof(array)/sizeof(int);
+sort(array,array+n,greater<int>());
+for(int i=0;i<n;i++){
+cout<<array[i]<<" ";
+}
+cout<<"\n";
+sort(array,array+n);
+for(int i=0;i<n;i++){
+cout<<array[i]<<" ";
+}
+}
+
+
+
+//move all negative elements one side and positive one side
+#include <iostream>
+using namespace std;
+int main() {
+    cout<<"Hello World!";
+    int arr[11]={1,-5,88,9,-1,-9,-33,-4,11,55,-10};
+     int n=sizeof(arr)/sizeof(int);
+     int low=0;
+     int high=n;
+     int temp;
+    while(low<high){
+       if(arr[low]<0){
+        low++;
+
+    }else if(arr[high]<0){
+
+     temp=arr[low];
+     arr[low]=arr[high];
+     arr[high]=temp;
+      high--;
+      low++;
+
+    }else{
+     high--;
+     
+   }
+ }
+ for(int j=0;j<n;j++){
+     cout<<" "<<arr[j];
+ }
+    return 0;
+}
